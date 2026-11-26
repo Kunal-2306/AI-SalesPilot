@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply bg-[#F7F8FA] text-slate-900 dark:bg-[#090B10] dark:text-slate-100 antialiased selection:bg-indigo-600 selection:text-white transition-colors duration-200;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .pro-card {
+    @apply rounded-2xl border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-[#0F131C] shadow-[0_1px_2px_rgba(15,23,42,0.04)] dark:shadow-[0_1px_2px_rgba(0,0,0,0.4)];
+  }
+
+  .pro-input {
+    @apply w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131824] px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:ring-2 focus:ring-indigo-600/15 focus:outline-none transition-all;
+  }
+
+  .pro-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-600/20 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 active:scale-[0.99] disabled:opacity-50 transition-all cursor-pointer;
+  }
+
+  .pro-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131824] px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors cursor-pointer;
+  }
+
+  .pro-label {
+    @apply block text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400 mb-1.5;
+  }
+
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image:
+      linear-gradient(to right, rgba(100, 116, 139, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(100, 116, 139, 0.06) 1px, transparent 1px);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300/80 dark:bg-slate-700/80 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
